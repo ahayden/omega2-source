@@ -56,6 +56,7 @@ sh scripts/onion-minimal-build.sh
 6. Compile the build system by running:
 ```
 make
+#note -j seems to cause build to fail
 ```
 
 > **We recommend running Docker on a Linux system**. Some users have reported compilation issues when running Docker on Windows and Mac OS.
