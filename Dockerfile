@@ -24,12 +24,13 @@ RUN apt-get update && apt-get install -y \
     python-dev \
     python-pip \
     libxml-parser-perl \
-    default-jdk
+    default-jdk \
+    golang
 
 ENV FORCE_UNSAFE_CONFIGURE 1
 
 COPY . /root/source
 WORKDIR /root/source
 
-RUN sh scripts/onion-feed-setup.sh && python scripts/onion-setup-build.py && make
+RUN sh scripts/onion-feed-setup.sh && python scripts/onion-setup-build.py && make -j
 
